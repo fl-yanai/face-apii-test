@@ -20,10 +20,10 @@
         .canvasPreview:before {
             content: "";
             display: block;
-            /* padding-top: 500px; */
+            padding-top: 500px;
         }
 
-        /* .canvas {
+        .canvas {
             position: absolute;
             left: 0;
             top: 0;
@@ -32,14 +32,14 @@
             box-sizing: content-box;
             padding: 0;
             margin: 0;
-        } */
+        }
     </style>
 </head>
 
 <body>
     <h2>WEBカメラの映像に表示</h2>
     <div id="canvasPreview" class="canvasPreview">
-        <canvas class="canvas" id="resultCanvas" width="350" height="350"></canvas>
+        <canvas class="canvas" id="resultCanvas" width="3500" height="240"></canvas>
     </div>
     <div class="what">
         <button onclick="pickup('mouth')">口</button>
@@ -55,7 +55,7 @@
         <a id="download_link"></a>
     </div>
 
-    <div id="videoPreview"></div>
+    <!-- <div id="videoPreview"></div> -->
 
     <script src="./js/video.js"></script>
     <script src="./js/recognition.js"></script>
