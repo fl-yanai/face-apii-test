@@ -2,7 +2,7 @@
 let mouthColor = 'rgba(255,0,0,0.2)'
 let eyeClolor = 'rgb(255,0,0)'
 
-const cameraSize = { w: 350, h: 350 };
+const cameraSize = { w: 350, h: 300 };
 
 //ビデオ要素
 const video = document.createElement('video');
@@ -77,7 +77,7 @@ function takePicture() {
 
 	Promise.all(imgs.map(loadImage)).then(imgs => {
 		imgs.forEach(img => {
-			resultContext.drawImage(img, 0, 0, 350, 350);
+			resultContext.drawImage(img, 0, 0, cameraSize.w, cameraSize.h);
 		});
 		save()
 	});
