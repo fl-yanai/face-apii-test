@@ -12,7 +12,7 @@ video.height = cameraSize.h;
 video.setAttribute( 'autoplay', true ); 
 video.setAttribute( 'muted', '' ); 
 video.setAttribute( 'playsinline', '' );
-// document.getElementById( 'videoPreview' ).appendChild( video );
+document.getElementById( 'videoPreview' ).appendChild( video );
 
 //ビデオ要素canvas
 const videoContext = createCanvas(cameraSize.w, cameraSize.h, "videoCanvas")
