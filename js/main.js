@@ -2,7 +2,7 @@
 let mouthColor = 'rgba(255,0,0,0.2)'
 let eyeClolor = 'rgb(255,0,0)'
 
-const cameraSize = { w: 720, h: 480 };
+const cameraSize = { w: 350, h: 350 };
 
 //ビデオ要素
 const video = document.createElement('video');
