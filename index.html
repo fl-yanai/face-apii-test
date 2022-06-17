@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBカメラの映像を表示</title>
+    <script src="./js/face-api.js"></script>
+    <script src="./js/modelLoad.js"></script>
+    <style>
+        .canvasPreview {
+            width: 100vw;
+            max-width: 100%;
+            position: relative;
+            padding: 0;
+            box-sizing: content-box;
+        }
+
+        .canvasPreview:before {
+            content: "";
+            display: block;
+            padding-top: 500px;
+        }
+
+        .canvas {
+            position: absolute;
+            left: 0;
+            top: 0;
+            border: 0;
+            max-width: 100%;
+            box-sizing: content-box;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>WEBカメラの映像に表示</h2>
+    <div id="canvasPreview" class="canvasPreview">
+        <canvas class="canvas" id="resultCanvas" width="720" height="480"></canvas>
+    </div>
+    <div class="what">
+        <button onclick="pickup('mouth')">口</button>
+        <button onclick="pickup('eye')">目</button>
+    </div>
+    <div class="inputColorBox">
+        <p style="margin-bottom: 0;">色を変える</p>
+        <input type="color" id="color" onchange="changeColor()">
+    </div>
+
+    <div class="picture">
+        <button onclick="takePicture()">保存</button>
+        <a id="download_link"></a>
+    </div>
+
+    <script src="./js/video.js"></script>
+    <script src="./js/recognition.js"></script>
+    <script src="./js/canvas.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
