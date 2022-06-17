@@ -9,7 +9,9 @@ const video = document.createElement('video');
 video.id = 'video';
 video.width = cameraSize.w;
 video.height = cameraSize.h;
-video.autoplay = true;
+video.setAttribute( 'autoplay', true ); 
+video.setAttribute( 'muted', '' ); 
+video.setAttribute( 'playsinline', '' );
 
 //ビデオ要素canvas
 const videoContext = createCanvas(cameraSize.w, cameraSize.h, "videoCanvas")
@@ -74,7 +76,7 @@ function takePicture() {
 
 	Promise.all(imgs.map(loadImage)).then(imgs => {
 		imgs.forEach(img => {
-			resultContext.drawImage(img, 0, 0, 720, 480);
+			resultContext.drawImage(img, 0, 0, 350, 350);
 		});
 		save()
 	});
