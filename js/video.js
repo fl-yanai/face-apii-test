@@ -1,4 +1,4 @@
-const resolution = { w: 1080, h: 720 };
+const resolution = { w: 300, h: 400 };
 
 //canvasにカメラの映像を描画
 function videoDraw() {
