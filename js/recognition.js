@@ -13,11 +13,12 @@ function drawResult(data) {
 	//ランドマークの座標
 	const mrks = data.landmarks.positions;
 	//顔の座標
-	const box = data.detection.box;
+	// const box = data.detection.box;
 
 	//口
 	function mouthDraw() {
-		mouthContext.clearRect(box.x, box.y, box.width, box.height)
+		//↓消えない時ある
+		mouthContext.clearRect(0, 0, video.width, video.height)
 		mouthContext.lineWidth = 0;
 		//開始視点(唇は48番〜67番)
 		mouthContext.moveTo(Math.round(mrks[48].x), Math.round(mrks[48].y))
@@ -60,7 +61,7 @@ function drawResult(data) {
 
 	//目
 	function eyeDraw() {
-		eyeContext.clearRect(box.x, box.y, box.width, box.height);
+		eyeContext.clearRect(0, 0, video.width, video.height);
 		eyeContext.lineWidth = 2;
 		eyeContext.strokeStyle = eyeClolor;
 
@@ -84,13 +85,13 @@ function drawResult(data) {
 
 	if (targetParts.includes('mouth')) {
 		mouthDraw()
-	}else{
-		mouthContext.clearRect(box.x, box.y, box.width, box.height)
+	} else {
+		mouthContext.clearRect(0, 0, video.width, video.height)
 	}
 
 	if (targetParts.includes('eye')) {
 		eyeDraw()
-	}else{
-		eyeContext.clearRect(box.x, box.y, box.width, box.height)
+	} else {
+		eyeContext.clearRect(0, 0, video.width, video.height)
 	}
 }

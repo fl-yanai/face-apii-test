@@ -2,7 +2,7 @@
 let mouthColor = 'rgba(255,0,0,0.2)'
 let eyeClolor = 'rgb(255,0,0)'
 
-const cameraSize = { w: 350, h: 300 };
+const cameraSize = { w: 360, h: 240 };
 
 //ビデオ要素
 const video = document.createElement('video');
@@ -31,13 +31,13 @@ let canvasDrawId
 //カメラ表示
 window.onload = function () {
 	videoDraw()
-	videoCanvasDraw()
-	function videoCanvasDraw() {
-		videoContext.drawImage(video, 0, 0, cameraSize.w, cameraSize.h);
-		requestAnimationFrame(videoCanvasDraw);
-	}
+	_videoCanvasDraw()
 }
 
+function _videoCanvasDraw() {
+	videoContext.drawImage(video, 0, 0, cameraSize.w, cameraSize.h);
+	requestAnimationFrame(_videoCanvasDraw);
+}
 //表示
 function pickup(target) {
 	function canvasDraw() {
